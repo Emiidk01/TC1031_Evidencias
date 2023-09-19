@@ -1,5 +1,4 @@
 # Catalogo de peliculas
-Escribe aquí un overview general de tu proyecto
 El proposito de este proyecto es poder ordenar peliculas en base a 4 de sus diferentes atributos, ya se por Nombre de la pelicula, Nombre del director, Año en que fue realizada o el Genero de la pelicula.  
 
 ## Descripción del avance 1
