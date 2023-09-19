@@ -1,12 +1,12 @@
 # Catalogo de peliculas
-El proposito de este proyecto es poder ordenar peliculas en base a 4 de sus diferentes atributos, ya se por Nombre de la pelicula, Nombre del director, Año en que fue realizada o el Genero de la pelicula.  
+El proposito de este proyecto es poder ordenar peliculas en base a 4 de sus diferentes atributos, ya sea por Nombre de la pelicula, nombre del director, año en que fue realizada o el genero de la pelicula.  
 
 ## Descripción del avance 1
 En este avance el objetivo es que dentro de un programa funcional se puedan organizar los datos almacenados. 
-Se debe usar un algoritmo de ordenamiento adecuado al problema (de los vistos en clase) y argumentar por que es que se eligio ese algoritmo
+Se debe usar un algoritmo de ordenamiento adecuado al problema (de los vistos en clase) y argumentar porqué es que se eligio ese algoritmo.
 
 ## Descripción de las salidas del avance de proyecto
-Se espera que se imprima una por una las peliculas siendo ordenadas en base al criterio que el usuario decidio. 
+Se espera que se imprima cada una de las peliculas siendo ordenadas en base al criterio en que el usuario decidio. 
 
 ## Desarrollo de competencias
 
