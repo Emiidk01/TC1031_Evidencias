@@ -323,10 +323,6 @@ void partirLista(Nodo* lista, Nodo*& izquierda, Nodo*& derecha) {
 }
 
 
-
-
-
-
 // Fucnion para eliminar las peliculas
 void eliminarTodasPeliculas(Nodo*& lista) {
     // Eliminar nodos de la lista
