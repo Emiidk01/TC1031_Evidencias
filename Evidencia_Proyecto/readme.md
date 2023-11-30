@@ -18,7 +18,7 @@ Esta parte se ve al momento de almacenar los datos en una lista simplemente liga
 ## Descripción del avance 3
 En este proyecto vas a almacenar los datos, a ordenar los datos y posteriormente a acceder a ellos de manera eficiiente.
 
-En este avance se puede observar:
+### Cambios sobre el segundo avance
 1. La implementacion de un algoritmo de ordenamiento. Un merge sort.
 2. Una estructura de datos donde se almacenaran los datos, en este caso use una lista simplemente ligada.
 3. Un archivo de texto donde hay peliculas, las culaes se pueden cargar a la estructura de datos.
@@ -26,23 +26,24 @@ En este avance se puede observar:
 5. Una opcion para eliminar todos los elementos de la lista y tambien del archivo de texto.
 6. Un mecanismo de escritura del archivo de texto de las peliculas ya que al momento de que el usuario realice la opcion "insertarLista este elemento se agregara al archivo.
 
+## Entrega final
+Correcciones sobre la escritura de archivos y mejoras en las funcionalidades
 
-### Cambios sobre el segundo avance
-2. Cambio de "struct" en lugar de "class": Despues de buscar documentacion e informacion en foros, note que struct y class se pueden usar para contener datos y funciones, sin embargo en struct los que se tenga dentro de la estructura es publico por defecto, por lo tanto, me parecio una manera mas simple y sofisticada ya que cuando usaba class los tenia que declarar como public.
+### Cambios sobre el tercer avance avance
+1. Mejoramiento en las funciones para arreglar el problema del duplicado de datos
 
-## Instrucciones para compilar el avance de proyecto
+## Instrucciones para compilar el proyecto
 Ejecuta el siguiente comando en la terminal:
 
 `g++ main.cpp -o primer_avance` 
 
-## Instrucciones para ejecutar el avance de proyecto
+## Instrucciones para ejecutar el proyecto
 Ejecuta el siguiente comando en la terminal:
 
 `./primer_avance` 
 
 ## Descripción de las entradas del avance de proyecto
-El programa requiere un archivo de tipo .txt donde estan almacenados los nombres de las peliculas, el archivo se llama "peliculas.txt". Existe un archivo de texto adicional, llamado "resplado.txt" y en el veremos de igual manera una lista de peliculas, esto en caso de que se llegaran a perder los datos al momento de eliminar la lista de peliculas del archivo original "peliculas.txt", si pasa algo asi, solo se copia el contenido de "resplado.txt" a "peliculas.txt".
-
+El programa requiere un archivo de tipo .txt donde estan almacenados los nombres de las peliculas, el archivo se llama "peliculas.txt". Existe tambien un llamado "datos.txt" que es donde trabajaremos la escritura de los datos, ya que "peliculas.txt" solo nos sirve para cargar los datos y "datos.txt" para visualizarlos
 
 ## Descripción de las salidas del avance de proyecto
 1. Cuando cargamos las peliculas del archivo a la lista ligada y seleccionamos "mostrar catalogo", obtendremos la lista de peliculas.
@@ -50,7 +51,6 @@ El programa requiere un archivo de tipo .txt donde estan almacenados los nombres
 3. Cuando seleccionemos ingresar pelicula, esta se insertara a la lista y se escribira en el archivo
 4. Si deseamos consultar si existe alguna pelicula, solo obtendremos un mensaje de si esta o no, despues de haber tecleado el nombre de la pelicula
 5. Si seleccionamos eliminar peliculas, estas se eliminaran de la lista y tambien se borraran del archivo de texto.
-
 
 ## Desarrollo de competencias
 
@@ -90,4 +90,10 @@ Me di cuenta que no tenia clara la idea la funcion de buscar (consultar) algun d
 Yo creo que porque la estructura general del programa es coherente y sigue un buen enfoque al momento de abrir el archivo, leer los datos que hay en el, construir la lista ligada, ordenarla y luego imprimir los resultados.
 
 ### Implementa mecanismos de escritura de archivos para guardar los datos  de las estructuras de manera correcta
-Al momento de realizar la operacion "Ingresar pelicula al catalogo", implemente un pequeño algoritmo donde creo un nuevo nodo con la película proporcionada, luego, recorro la lista para encontrar la posición adecuada en orden alfabetico, manteniendo la lista ordenada. La insercion se realiza de manera constante al principio de la lista o lineal en el medio, segun corresponda. Ademas, agrego la pelicula al archivo "peliculas.txt" para mantener actualizado el almacenamiento en disco. Esto gestiona la insercion ordenada de peliculas en la lista ligada y actualiza el archivo correspondiente. Esto se puede ver en la funcion insertarLista
+Si lograste este criterio anteriormente, copia aquí tu argumentación. Si no, ésta es una nueva oportunidad para lograrlo. Escribe aquí tu aprendizaje y tus argumentos sobre por qué consideras que ahora ya has desarrrollado este criterio y dónde se puede observar el desarrollo que mencionas.
+
+Me di cuenta que si usaba un solo archivo de texto ("peliculas.txt") y trabajaba sobre si mismo, moviendo los datos, y demas, tendia a fallar en algunos casos debido al merge, sin embargo, la solucion que encontre fue usar "peliculas.txt" unicamente para importar los datos a un nuevo archivo de texto llamo "datos.txt" y poder manejarlos ahi. SIn embargo, seguia teniendo error de datos duplicados asi que me di cuenta que habia un problema en la funcion mergeSort, donde la lista original no estaba siendo limpiada antes de realizar la fusión de las mitades ordenadas. Esto resultaba en duplicados porque los elementos se insertaban tanto en la lista original como en la nueva lista fusionada.
+
+La solución que encontre fue agregar la función eliminarTodasPeliculas antes de la fusión en mergeSort, para asegurar que la lista original esté vacía antes de insertar los elementos de las mitades ordenadas, evitando así duplicados en el archivo "datos.txt".
+
+Esto finalmente se puede ver reflejado al momento de usar el programa, si cargamos los datos y depues agregar datos manualmente, para despues ordenarlos. Si se hace eso en el programa, ahi se vera que ya no existen duplicados.
