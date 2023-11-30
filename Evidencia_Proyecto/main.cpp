@@ -1,3 +1,9 @@
+/*
+Autor: Emiliano Gomez Gonzalez
+Catalogo de peliculas
+Algoritmos y Estructuras de Datos
+*/
+
 #include <iostream>
 #include <conio.h>
 #include <stdlib.h>
@@ -9,10 +15,10 @@ struct Nodo {
     string dato;
     Nodo *siguiente;
 
-    // Constructor por omisión
+    // Constructor por omision
     Nodo() : dato(""), siguiente(nullptr) {}
 
-    // Constructor para facilitar la creación de nodos
+    // Constructor para facilitar la creacion de nodos
     Nodo(string valor) : dato(valor), siguiente(nullptr) {}
 };
 
@@ -108,7 +114,7 @@ void menu() {
 
 // Funcion para insertar elemenetos en la lista
 void insertarLista(Nodo*& lista, string n) {
-    // Verificar si la película ya existe en la lista
+    // Verificar si la pelicula ya existe en la lista
     Nodo* actual = lista;
     unordered_set<string> peliculasSet;
     bool existe = false;
